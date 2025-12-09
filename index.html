@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashleys CLEANING SERVICES</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --charcoal: #1c1d21;
+        --cream: #f5f0e9;
+        --soft-cream: #fffdf8;
+        --bronze: #c99a56;
+        --bronze-dark: #b38238;
+        --overlay: rgba(21, 21, 23, 0.78);
+        --sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+        --serif: "Playfair Display", "Times New Roman", serif;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--sans);
+        background: var(--soft-cream);
+        color: var(--charcoal);
+        line-height: 1.6;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 80vh;
+        background: linear-gradient(var(--overlay), var(--overlay)),
+          url("https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80")
+            center/cover no-repeat;
+        color: var(--cream);
+        display: flex;
+        align-items: center;
+        padding: 4rem 1.5rem;
+      }
+
+      .hero-content {
+        max-width: 720px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .hero .eyebrow {
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        color: var(--bronze);
+        margin-bottom: 1rem;
+      }
+
+      .hero h1 {
+        font-family: var(--serif);
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        margin: 0;
+        letter-spacing: 0.15em;
+      }
+
+      .hero h1 span {
+        display: block;
+        font-family: var(--sans);
+        font-size: 0.32em;
+        letter-spacing: 0.45em;
+        margin-top: 0.5rem;
+      }
+
+      .hero .tagline {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.2rem;
+        margin: 1rem 0 1.5rem;
+        letter-spacing: 0.3em;
+      }
+
+      .hero .intro {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+        color: rgba(245, 240, 233, 0.9);
+      }
+
+      .cta-group {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .cta {
+        position: relative;
+        padding: 0.95rem 2.8rem;
+        border-radius: 999px;
+        font-size: 0.96rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--charcoal);
+        font-weight: 600;
+        background: var(--cream);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .cta.secondary {
+        background: transparent;
+        border: 1px solid var(--bronze);
+        color: var(--cream);
+      }
+
+      .cta.shimmer::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          130deg,
+          rgba(255, 255, 255, 0) 25%,
+          rgba(255, 255, 255, 0.7) 50%,
+          rgba(255, 255, 255, 0) 75%
+        );
+        animation: shimmer 3s infinite linear;
+      }
+
+      @keyframes shimmer {
+        0% {
+          transform: translateX(-50%) rotate(25deg);
+        }
+        100% {
+          transform: translateX(50%) rotate(25deg);
+        }
+      }
+
+      .cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+      }
+
+      section {
+        padding: 4rem 1.5rem;
+      }
+
+      .section-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        text-align: center;
+        font-family: var(--serif);
+        letter-spacing: 0.35em;
+        color: var(--bronze-dark);
+        margin-bottom: 2rem;
+      }
+
+      .split-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .panel {
+        background: var(--cream);
+        padding: 2.5rem;
+        border-radius: 30px;
+        border: 1px solid rgba(28, 29, 33, 0.08);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
+      }
+
+      .panel.gold-line {
+        border-top: 6px solid var(--bronze);
+      }
+
+      .panel label {
+        display: inline-block;
+        font-size: 0.85rem;
+        letter-spacing: 0.4em;
+        color: rgba(28, 29, 33, 0.6);
+        margin-bottom: 1.5rem;
+      }
+
+      ul.service-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      ul.service-list li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(28, 29, 33, 0.1);
+        font-weight: 500;
+        letter-spacing: 0.2em;
+      }
+
+      .investment-item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.1rem;
+        letter-spacing: 0.15em;
+        margin-bottom: 1rem;
+      }
+
+      .investment-footnote {
+        font-size: 0.85rem;
+        letter-spacing: 0.25em;
+        margin-top: 1rem;
+        text-transform: uppercase;
+      }
+
+      .offer-band {
+        background: var(--charcoal);
+        color: var(--cream);
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
+
+      .offer-band .highlight {
+        background: linear-gradient(
+          120deg,
+          #f6d7a9,
+          #c99a56,
+          #f6d7a9
+        );
+        background-size: 200% 200%;
+        animation: glow 6s ease infinite;
+        padding: 1rem 2rem;
+        border-radius: 999px;
+        letter-spacing: 0.3em;
+        display: inline-block;
+      }
+
+      @keyframes glow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .contact-block {
+        text-align: center;
+        line-height: 2;
+        letter-spacing: 0.2em;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem 1.5rem 3rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.4em;
+        color: rgba(28, 29, 33, 0.7);
+      }
+
+      .crest-button {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        border: none;
+        background: radial-gradient(circle at 30% 30%, #f6e2c6, #c99a56 60%, #8c5e21);
+        color: #4d3411;
+        font-family: var(--serif);
+        font-size: 2rem;
+        letter-spacing: -0.1em;
+        cursor: pointer;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .crest-button span {
+        display: block;
+        line-height: 1;
+      }
+
+      .crest-button:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.75);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      .modal-overlay.active {
+        display: flex;
+      }
+
+      .modal {
+        background: var(--soft-cream);
+        border-radius: 24px;
+        max-width: 640px;
+        width: 100%;
+        padding: 2.5rem;
+        position: relative;
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+      }
+
+      .modal h2 {
+        font-family: var(--serif);
+        margin-top: 0;
+        letter-spacing: 0.2em;
+        color: var(--bronze-dark);
+      }
+
+      .modal p {
+        margin-bottom: 1.2rem;
+        color: #4b3a25;
+      }
+
+      .modal strong {
+        letter-spacing: 0.2em;
+      }
+
+      .modal button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--charcoal);
+      }
+
+      @media (max-width: 640px) {
+        .hero {
+          padding: 3rem 1rem;
+        }
+        .panel {
+          padding: 2rem;
+        }
+        .crest-button {
+          width: 72px;
+          height: 72px;
+          font-size: 1.6rem;
+          bottom: 1.2rem;
+          right: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Residential Concierge Clean</p>
+        <h1>
+          Ashleys
+          <span>CLEANING SERVICES</span>
+        </h1>
+        <p class="tagline">SPOTLESS SPACES, HAPPY FACES</p>
+        <p class="intro">
+          From Somerset to the lake house, every clean is staged like a reveal
+          day—calm, polished, and unmistakably Kentucky in its warmth. Imagine a
+          home that greets guests with quiet luxury while giving you peace of
+          mind.
+        </p>
+        <div class="cta-group">
+          <a class="cta shimmer" href="sms:+16064168268"
+            >Text 606-416-8268</a
+          >
+          <a class="cta shimmer secondary" href="tel:+16064168268"
+            >Call 606-416-8268</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="section-inner">
+        <p class="section-title">THE PORTFOLIO</p>
+        <div class="split-grid">
+          <div class="panel gold-line">
+            <label>OUR EXPERTISE</label>
+            <ul class="service-list">
+              <li>ORGANIZATIONS</li>
+              <li>DECLUTTERING</li>
+              <li>MOVE IN CLEANS</li>
+              <li>MOVE OUT CLEANS</li>
+              <li>OPEN HOUSE PREP</li>
+              <li>SMALL INTERIOR PAINT JOBS</li>
+              <li>WALLS AND BASEBOARD CLEANING</li>
+              <li>WINDOW WASHING</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <label>INVESTMENT</label>
+            <div class="investment-item">
+              <span>BASIC CLEANS</span>
+              <span>$85-$150</span>
+            </div>
+            <div class="investment-item">
+              <span>DEEP CLEANS</span>
+              <span>$150-$300</span>
+            </div>
+            <p class="investment-footnote">
+              PRICES WILL VARY DEPENDING ON HOME SIZE
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer-band">
+      <div class="section-inner">
+        <p class="highlight">
+          NEW CUSTOMER DISCOUNT OF $25 OFF FIRST CLEANING
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner contact-block">
+        <p>CALL OR TEXT 606-416-8268</p>
+        <p>FREE ESTIMATES</p>
+        <p>ALSO AVAILABLE VIA FB MESSENGER</p>
+      </div>
+    </section>
+
+    <footer>REFRENCES AVAILABLE UPON REQUEST</footer>
+
+    <button class="crest-button" id="crestButton" aria-label="View services">
+      <span>A</span>
+      <span>C</span>
+    </button>
+
+    <div class="modal-overlay" id="serviceModal" aria-hidden="true">
+      <div class="modal">
+        <button id="closeModal" aria-label="Close services">&times;</button>
+        <h2>Ashleys Southern Service Notes</h2>
+        <p>
+          Pull up a chair on the porch and let me walk you through how each
+          offering keeps your home grinning from foyer to back deck.
+        </p>
+        <p>
+          <strong>ORGANIZATIONS</strong> – Hand-in-hand styling of closets,
+          pantries, and mudrooms so your treasures are right where you expect
+          them, tidy as a pin.
+        </p>
+        <p>
+          <strong>DECLUTTERING</strong> – A gentle, judgment-free sweep that
+          makes room for calm mornings and smooth evenings.
+        </p>
+        <p>
+          <strong>MOVE IN CLEANS</strong> – Keys in hand and a house that smells
+          like fresh linen the moment you cross the threshold.
+        </p>
+        <p>
+          <strong>MOVE OUT CLEANS</strong> – Leave behind a sparkling thank-you
+          so the next story can start beautifully.
+        </p>
+        <p>
+          <strong>OPEN HOUSE PREP</strong> – Every surface staged to photograph
+          like a magazine spread and charm buyers in person.
+        </p>
+        <p>
+          <strong>SMALL INTERIOR PAINT JOBS</strong> – Touch-ups and accent
+          refreshes that keep scuffs and scrapes from stealing the spotlight.
+        </p>
+        <p>
+          <strong>WALLS AND BASEBOARD CLEANING</strong> – Elevating the details
+          guests rarely speak of but always feel.
+        </p>
+        <p>
+          <strong>WINDOW WASHING</strong> – Sunlight invited in with panes so
+          clear it looks like the view is framed in glass crystal.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const crestBtn = document.getElementById("crestButton");
+      const modal = document.getElementById("serviceModal");
+      const closeBtn = document.getElementById("closeModal");
+
+      crestBtn.addEventListener("click", () => {
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+      });
+
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          modal.classList.remove("active");
+          modal.setAttribute("aria-hidden", "true");
+        }
+      });
+    </script>
+  </body>
+</html>
