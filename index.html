@@ -325,6 +325,8 @@
         padding: 2.5rem;
         position: relative;
         box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+        max-height: calc(100vh - 4rem);
+        overflow-y: auto;
       }
 
       .modal h2 {
@@ -352,6 +354,11 @@
         font-size: 1.5rem;
         cursor: pointer;
         color: var(--charcoal);
+      }
+
+      .modal-cta {
+        margin-top: 2rem;
+        justify-content: center;
       }
 
       @media (max-width: 640px) {
@@ -386,14 +393,6 @@
           home that greets guests with quiet luxury while giving you peace of
           mind.
         </p>
-        <div class="cta-group">
-          <a class="cta shimmer" href="sms:+16064168268"
-            >Text 606-416-8268</a
-          >
-          <a class="cta shimmer secondary" href="tel:+16064168268"
-            >Call 606-416-8268</a
-          >
-        </div>
       </div>
     </header>
 
@@ -496,6 +495,10 @@
           <strong>WINDOW WASHING</strong> – Sunlight invited in with panes so
           clear it looks like the view is framed in glass crystal.
         </p>
+        <div class="cta-group modal-cta">
+          <a class="cta shimmer" href="sms:+16064168268">Text Now</a>
+          <a class="cta shimmer secondary" href="tel:+16064168268">Call Now</a>
+        </div>
       </div>
     </div>
 
